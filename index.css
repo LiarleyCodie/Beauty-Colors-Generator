@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  min-height: 100vh;
+  background: #f1f1f1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: Ubuntu, sans-serif;
+}
+
+nav,
+footer {
+  width: 100%;
+  height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 2rem;
+  width: 9rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 0.5rem;
+  border-radius: 1rem;
+  background: none;
+  color: #8257e5;
+  font-weight: bold;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border: 2px solid #8257e5;
+}
+
+button.active {
+  background: #8257e5;
+  color: #f1f1f1;
+}
+
+button:hover {
+  background: #8257e5;
+  color: #f1f1f1;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+main .value {
+  background: #1e1e1e;
+  color: #f1f1f1;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+}
+
+main .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .buttons button {
+  width: 9rem;
+}
+
+footer {
+  color: #1e1e1e;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+footer:hover {
+  opacity: 1;
+}
+
+footer a {
+  color: #1e1e1e;
+}
+
+footer a:hover {
+  color: #8257e5;
+}
+
+@media screen and (min-width: 480px) {
+  main .value {
+    font-size: 3rem;
+  }
+}
+/*# sourceMappingURL=index.css.map */
