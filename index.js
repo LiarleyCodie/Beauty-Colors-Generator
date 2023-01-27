@@ -5,12 +5,12 @@ const navButtons = document.querySelectorAll("nav button")
 
 const generate = {
   methodsAllowed: {
-    hex: false, rgb: false, text: true
+    hex: false, rgb: false, simple: true
   },
   hex: function () {
     const hexChars = "0123456789ABCDEF"
     const hexData = []
-    for (let i = 0; i <= 6; i++) {
+    for (let i = 0; i < 6; i++) {
       hexData.push(hexChars[Math.floor(Math.random() * hexChars.length)])
     }
     hexData.unshift("#")
@@ -31,10 +31,17 @@ const generate = {
   },
   random: function () {
     const colorData = []
-    const methods = [this.hex, this.rgb, this.simple]
-    for (let i = 0; i < 3; i++) {
-      colorData.push(methods[i]())
+    const methods = []
+    for (let key in this.methodsAllowed) {
+      if (this.methodsAllowed[key]) {
+        const func = this[key]
+        methods.push(func)
+      }
     }
+    methods.forEach(func => {
+      colorData.push(func())
+    })
+    
     return colorData[Math.floor(Math.random() * colorData.length)]
   }
 }
@@ -56,11 +63,19 @@ newColorBtn.addEventListener("click", function () {
 })
 
 navButtons.forEach(button => button.addEventListener("click", function () {
-  if (generate.methodsAllowed[button.getAttribute("data-mode")] === false) {
-    generate.methodsAllowed[button.getAttribute("data-mode")] = true
-    button.classList.add("active")
-  } else {
-    generate.methodsAllowed[button.getAttribute("data-mode")] = false
-    button.classList.remove("active")
-  }
+  changeGeneratePropsState(button)
 }))
+
+function changeGeneratePropsState(element) {
+  if (generate.methodsAllowed[element.getAttribute("data-mode")] === false) {
+    generate.methodsAllowed[element.getAttribute("data-mode")] = true
+    element.classList.add("active")
+  } else {
+    generate.methodsAllowed[element.getAttribute("data-mode")] = false
+    element.classList.remove("active")
+  }
+}
+
+// function changeTypesOfValues() {
+//   generate.
+// }
