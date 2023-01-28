@@ -5,7 +5,7 @@ const navButtons = document.querySelectorAll("nav button")
 
 const generate = {
   methodsAllowed: {
-    hex: false, rgb: false, simple: true
+    simple: true, hex: false, rgb: false
   },
   hex: function () {
     const hexChars = "0123456789ABCDEF"
@@ -56,14 +56,15 @@ const changeElements = {
 }
 
 newColorBtn.addEventListener("click", function () {
+  checkIfAnyMethodsAllowed()
   const value = generate.random()
   changeElements.background(value)
   changeElements.textElement(value)
-  console.log(value)
 })
 
 navButtons.forEach(button => button.addEventListener("click", function () {
   changeGeneratePropsState(button)
+  checkIfAnyMethodsAllowed()
 }))
 
 function changeGeneratePropsState(element) {
@@ -76,6 +77,23 @@ function changeGeneratePropsState(element) {
   }
 }
 
-// function changeTypesOfValues() {
-//   generate.
-// }
+function checkIfAnyMethodsAllowed() {
+  let methodsEnabled = 0
+  for (let state in generate.methodsAllowed) {
+    if (generate.methodsAllowed[state]) {
+      methodsEnabled += 1
+    }
+  }
+  if (methodsEnabled === 0) {
+    generate.methodsAllowed.simple = true
+    navButtons[0].classList.add("active")
+  }
+}
+
+function initialize() {
+  const value = generate.random()
+  changeElements.background(value)
+  changeElements.textElement(value)
+}
+
+initialize()

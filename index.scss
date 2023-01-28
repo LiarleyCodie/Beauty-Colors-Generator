@@ -18,7 +18,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  font-family: Ubuntu, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 nav,
@@ -28,6 +28,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: $darker;
 }
 
 button {
@@ -39,20 +40,20 @@ button {
   margin: 0 0.5rem;
   border-radius: 1rem;
   background: none;
-  color: $accent-color;
+  color: $lighter;
   font-weight: bold;
   font-size: 0.8rem;
   cursor: pointer;
-  border: 2px solid $accent-color;
+  border: 2px solid $lighter;
 
   &.active {
-    background: $accent-color;
-    color: $lighter;
+    background: $lighter;
+    color: $darker;
   }
 
   &:hover {
-    background: $accent-color;
-    color: $lighter;
+    background: $lighter;
+    color: $darker;
   }
 }
 
@@ -75,21 +76,24 @@ main {
 
     button {
       width: 9rem;
+      background: $darker;
+      border: none;
+
+      &:hover {
+        background: #303030;
+        color: $lighter;
+      }
     }
   }
 }
 
 footer {
-  color: $darker;
-  opacity: 0.6;
+  font-size: 0.8rem;
+  color: $lighter;
   cursor: pointer;
-
-  &:hover {
-    opacity: 1;
-  }
-
   a {
-    color: $darker;
+    color: $lighter;
+    font-weight: bold;
 
     &:hover {
       color: $accent-color;
