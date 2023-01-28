@@ -8,6 +8,6 @@
 - For generate the color (or a new color), just click in `New Color` button in the center of the page.
 - The button on the side of _New Color_, called `Copy to Clipboard` will quickly copy the color value to clipboard area. So, you only would need to press `CTRL+V` to paste the value.
 
-> :christmas_tree: When all three (or two) buttons in top are activated, the value generated will be one between the three types (or text, or rgb or hex)
+> :christmas_tree: When all three (or two) buttons in top are activated, the value generated will be, randomly, one between the three types (or text, or rgb or hex)
 
 ![Main Interface](https://i.imgur.com/9J0KZrX.png)
