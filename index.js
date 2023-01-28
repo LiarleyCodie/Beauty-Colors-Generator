@@ -2,6 +2,7 @@ const valueDisplayEl = document.querySelector("#valueDisplay")
 const newColorBtn = document.querySelector("#generatenew")
 const copyToClipboardBtn = document.querySelector("#copytoclipboard")
 const navButtons = document.querySelectorAll("nav button")
+var value = undefined
 
 const generate = {
   methodsAllowed: {
@@ -57,9 +58,18 @@ const changeElements = {
 
 newColorBtn.addEventListener("click", function () {
   checkIfAnyMethodsAllowed()
-  const value = generate.random()
+  value = generate.random()
   changeElements.background(value)
   changeElements.textElement(value)
+})
+
+copyToClipboardBtn.addEventListener("click", function() {
+  navigator.clipboard.writeText(value)
+  this.style.animation = "400ms ease alertCopy backwards"
+
+  this.addEventListener("animationend", function() {
+    this.style.animationName = "none"
+  })
 })
 
 navButtons.forEach(button => button.addEventListener("click", function () {
@@ -91,7 +101,7 @@ function checkIfAnyMethodsAllowed() {
 }
 
 function initialize() {
-  const value = generate.random()
+  value = generate.random()
   changeElements.background(value)
   changeElements.textElement(value)
 }

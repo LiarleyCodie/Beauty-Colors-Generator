@@ -101,6 +101,18 @@ footer {
   }
 }
 
+@keyframes alertCopy {
+  33% {
+    transform: scale(1.1) rotateZ(3deg)
+  }
+  55% {
+    transform: scale(1.1) rotateZ(-3deg)
+  }
+  77% {
+    transform: scale(1.1) rotateZ(3deg)
+  }
+}
+
 @media screen and (min-width: 480px) {
   main {
     .value {
